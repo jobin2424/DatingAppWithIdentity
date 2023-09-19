@@ -1,0 +1,28 @@
+<h4>
+  Internal server error - refreshing the page will make the error disapper!
+</h4>
+
+<ng-container *ngIf="error">
+  <h4 class="text-danger">Error: {{ error.message }}</h4>
+  <p class="font-weight-bold">
+    Note: If you are seeing this, then angular is probably not to blame
+  </p>
+  <p>What to do next?</p>
+  <ol>
+    <li>
+      Open chrome dev tools! then check the failing request in the network tab
+    </li>
+    <li>Examine the request URL - what API endpoint are you requesting?</li>
+    <li>
+      Reproduce the problem in postman, if we get the same error, then Angular
+      is not the problem
+    </li>
+  </ol>
+  <p class="font-weight-bold">
+    Following is the stack trace - the first few line will tell you what caused
+    the issue with the API
+  </p>
+  <code class="mt-5" style="background-color: whitesmoke">
+    {{ error.details }}
+  </code>
+</ng-container>
